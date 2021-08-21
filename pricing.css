@@ -1,0 +1,257 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* My attempt at CSS */
+
+/* Changes the whole HTML document font and the box-model to not add border width to the specified width */
+html {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* Make the body centered and can work with flex box */
+
+body {
+	background-color: #7de2d1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+/* work with the div container that holds the 3 smaller divs */
+
+.panel {
+	background-color: #f5f3f5;
+	border-radius: 10px;
+	padding: 15px 25px;
+	width: 100%;
+	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* work with the 3 pricing plans. these style apply to all 3 */
+
+.pricing-plan {
+	border-bottom: 1px solid #e1e2df;
+}
+.pricing-plan:last-child {
+	border-bottom: none;
+}
+
+/* style each image */
+
+.pricing-image {
+	margin-bottom: 25px;
+	max-width: 100%;
+}
+
+.pricing-header {
+	color: #888;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 1.25em;
+}
+
+.pricing-features {
+	margin: 50px 0 25px;
+}
+
+.pricing-features-item {
+	color: #131515;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 1em;
+	line-height: 1.5;
+	padding: 15px 0;
+	border-top: 1px solid #e1e2df;
+}
+
+.pricing-features-item:last-child {
+	border-bottom: none;
+}
+
+.pricing-price {
+	color: #339989;
+	display: block;
+	font-size: 2.5em;
+	font-weight: 700;
+}
+
+.pricing-button {
+	border: 1px solid #339989;
+	color: #23395b;
+	display: inline-block;
+	padding: 15px 35px;
+	text-decoration: none;
+	margin: 25px 0 25px;
+	transition: background-color font-weight 200ms ease-in-out;
+	border-radius: 10px;
+}
+
+.pricing-button:hover,
+.pricing-button:focus {
+	background-color: #7de2d1;
+	color: #2b2c28;
+	font-weight: 700;
+}
+
+.pricing-button.is-featured {
+	background-color: #339989;
+	color: white;
+	font-weight: 600;
+	transition: 200ms ease-in-out;
+}
+
+.pricing-button.is-featured:hover,
+.pricing-button.is-featured:focus {
+	background-color: #23395b;
+}
+
+/* above is mobile first -- now for wider screen responsive - need media queries */
+
+@media (min-width: 900px) {
+	.panel {
+		flex-direction: row;
+	}
+
+	.pricing-plan {
+		border-bottom: none;
+		border-right: 1px solid #339989;
+		padding: 25px 50px;
+	}
+
+	.pricing-plan:last-child {
+		border-right: none;
+	}
+}
